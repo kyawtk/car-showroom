@@ -4,6 +4,6 @@ import Navbar from './Navbar'
 import CustomFilter from './CustomFilter'
 import SearchBar from './SearchBar'
 import SearchManufactures from './SearchManufactures'
-
+import BikeDetails from './BikeDetails'
 import BikeCard from './BikeCard'
-export {BikeCard,SearchManufactures,Hero,SearchBar,CustomFilter, Footer, Navbar}
+export {BikeCard,BikeDetails,SearchManufactures,Hero,SearchBar,CustomFilter, Footer, Navbar}

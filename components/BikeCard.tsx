@@ -1,9 +1,11 @@
 "use client";
-
 import Image from "next/image";
 import React, { useState } from "react";
 import { BikeInterface } from "@/types";
-interface BikeCardProps {
+import CustomButton from "./CustomButton";
+import { BikeDetails } from ".";
+import { AnimatePresence } from "framer-motion";
+export interface BikeCardProps {
   bike: BikeInterface;
 }
 const BikeCard = ({ bike }: BikeCardProps) => {
@@ -18,9 +20,13 @@ const BikeCard = ({ bike }: BikeCardProps) => {
     transmission,
     fuel_capacity,
     starter,
-    
   } = bike;
+
+  const [isOpen ,setIsOpen] = useState(false)
   return (
+
+
+
     <div className="car-card group">
       <div className="car-card__content">
         <h2 className="car-card__content-title">
@@ -50,12 +56,7 @@ const BikeCard = ({ bike }: BikeCardProps) => {
             <p className="text-[14px]">{transmission} </p>
           </div>
           <div className="flex flex-col justify-center items-center  gap-2">
-            <Image
-              src="/gas.svg"
-              width={20}
-              height={20}
-              alt="steering wheel"
-            />
+            <Image src="/gas.svg" width={20} height={20} alt="steering wheel" />
             <p className="text-[14px]">{fuel_capacity} </p>
           </div>
           <div className="flex flex-col justify-center items-center  gap-2">
@@ -68,7 +69,22 @@ const BikeCard = ({ bike }: BikeCardProps) => {
             <p className="text-[14px]">{wheelbase} </p>
           </div>
         </div>
+
+        <div className="car-card__btn-container">
+          <CustomButton
+            handleClick={()=>setIsOpen(true)}
+            title={"View more"}
+            containerStyles="bg-blue-500 w-full rounded-lg text-white"
+          ></CustomButton>
+        </div>
       </div>
+      
+        <BikeDetails
+          isOpen={isOpen}
+          close={() => setIsOpen(false)}
+          bike={bike}
+        ></BikeDetails>
+    
     </div>
   );
 };

@@ -15,3 +15,8 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
+
+
+const SearchButton =()=>{
+  return <button type=""></button>
+}

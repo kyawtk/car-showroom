@@ -1,10 +1,12 @@
+
 import { BikeCard, Hero, SearchBar, CustomFilter } from "@/components";
-import { getMotorcycles } from "@/utils";
+import { generateBikeImageUrl, getMotorcycles } from "@/utils";
 import Image from "next/image";
+import { useEffect } from "react";
 
 export default async function Home() {
   const allCycles = await getMotorcycles();
-  console.log(allCycles);
+  
 
   const isDataEmpty =
     allCycles.length === 0 || !allCycles || Array.isArray(allCycles) === false;

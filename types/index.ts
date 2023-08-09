@@ -20,7 +20,7 @@ export interface BikeInterface{
   make: string,
   model: string,
   year: string,
-  type: stringstring,
+  type: string,
   displacement: string
   engine: string,
   compression: string,
@@ -49,6 +49,6 @@ export interface BikeInterface{
   total_width: string,
   ground_clearance: string,
   wheelbase: string,
-  fuel_capacity: string      ,
-  starter:stringstring,
+  fuel_capacity: string,
+  starter:string,
 }
